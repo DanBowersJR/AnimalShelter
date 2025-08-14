@@ -2,21 +2,23 @@ package com.animalshelter;
 
 public abstract class Animal {
     private String name;
-    private int order; // used for FIFO
+    private String type;
 
-    public Animal(String name) {
+    public Animal(String name, String type) {
         this.name = name;
+        this.type = type;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getOrder() {
-        return order;
+    public String getType() {
+        return type;
     }
 
-    public void setOrder(int order) {
-        this.order = order;
+    @Override
+    public String toString() {
+        return type + ": " + name;
     }
 }
