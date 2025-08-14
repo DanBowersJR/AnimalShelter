@@ -2,23 +2,28 @@ package com.animalshelter;
 
 public abstract class Animal {
     private String name;
-    private String type;
+    private int order; // arrival order
 
-    public Animal(String name, String type) {
+    public Animal(String name) {
         this.name = name;
-        this.type = type;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getType() {
-        return type;
+    public void setOrder(int order) {
+        this.order = order;
     }
+
+    public int getOrder() {
+        return order;
+    }
+
+    public abstract String getType();
 
     @Override
     public String toString() {
-        return type + ": " + name;
+        return getType() + ": " + name;
     }
 }
